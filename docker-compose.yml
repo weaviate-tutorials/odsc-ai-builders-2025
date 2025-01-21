@@ -24,4 +24,5 @@ services:
       ENABLE_API_BASED_MODULES: 'true'
       BACKUP_FILESYSTEM_PATH: '/var/lib/weaviate/backups'
       CLUSTER_HOSTNAME: 'node1'
+      LOG_LEVEL: 'debug'
 ...
