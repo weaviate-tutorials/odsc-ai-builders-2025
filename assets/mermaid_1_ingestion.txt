@@ -1,0 +1,26 @@
+flowchart LR
+    SourceData["📊 Source Data "]
+
+    subgraph VectorDB ["Vector Database"]
+        Collection["🗄️ Collection"]
+        ObjectStore["Object Store"]
+        Indexes["Indexes"]
+
+        %% Internal connections
+        Collection --> Indexes
+        Collection --> ObjectStore
+    end
+
+    %% External connection
+    SourceData --> Collection
+
+    %% Style nodes
+    style Collection fill:#ffffff,stroke:#130C49,color:#130C49,stroke-width:2px
+    style SourceData fill:#ffffff,stroke:#130C49,color:#130C49,stroke-width:2px
+    style Indexes fill:#FFF3E0,stroke:#FFB74D,color:#130C49
+    style ObjectStore fill:#E3F2FD,stroke:#64B5F6,color:#130C49
+
+    %% Style subgraph with transparent background
+    style VectorDB fill:transparent,stroke:#7AD6EB,stroke-width:2px,color:#130C49
+
+

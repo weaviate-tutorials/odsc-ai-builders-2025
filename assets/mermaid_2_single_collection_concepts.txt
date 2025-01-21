@@ -1,0 +1,67 @@
+flowchart LR
+    Collection["🗄️ Collection"]
+
+    subgraph search ["Indexes"]
+        direction TB
+        Indexes["Indexes"]
+
+        subgraph vector ["Vector Search"]
+            direction TB
+            VectorIndex["Vector Index"]
+            IndexStructure["Index Structure"]
+            VectorCache["Vector Cache"]
+        end
+
+        subgraph text ["Text Search"]
+            direction TB
+            InvertedIndex["Inverted Index"]
+            BM25Index["BM25 Index"]
+            FilterIndex["Filter Index"]
+        end
+    end
+
+    subgraph storage ["Data Storage"]
+        direction TB
+        ObjectStore["Object Store"]
+        ObjectData["Object Data / Metadata"]
+        VectorData["Vector Data"]
+    end
+
+    %% Connections
+    Collection --> Indexes
+    Collection --> ObjectStore
+
+    Indexes --> VectorIndex
+    Indexes --> InvertedIndex
+
+    VectorIndex --> IndexStructure
+    VectorIndex --> VectorCache
+
+    InvertedIndex --> BM25Index
+    InvertedIndex --> FilterIndex
+
+    ObjectStore --> ObjectData
+    ObjectStore --> VectorData
+
+    %% Style Collection node
+    style Collection fill:#ffffff,stroke:#130C49,color:#130C49,stroke-width:2px
+
+    %% Style Memory components (warm color)
+    style Indexes fill:#FFF3E0,stroke:#FFB74D,color:#130C49
+    style VectorIndex fill:#FFF3E0,stroke:#FFB74D,color:#130C49
+    style InvertedIndex fill:#FFF3E0,stroke:#FFB74D,color:#130C49
+    style VectorCache fill:#FFF3E0,stroke:#FFB74D,color:#130C49
+    style IndexStructure fill:#FFF3E0,stroke:#FFB74D,color:#130C49
+    style BM25Index fill:#FFF3E0,stroke:#FFB74D,color:#130C49
+    style FilterIndex fill:#FFF3E0,stroke:#FFB74D,color:#130C49
+
+    %% Style Disk components (cool color)
+    style ObjectStore fill:#E3F2FD,stroke:#64B5F6,color:#130C49
+    style ObjectData fill:#E3F2FD,stroke:#64B5F6,color:#130C49
+    style VectorData fill:#E3F2FD,stroke:#64B5F6,color:#130C49
+
+    %% Style subgraphs
+    style search fill:#ffffff,stroke:#7AD6EB,stroke-width:2px,color:#130C49
+    style vector fill:#ffffff,stroke:#61BD73,stroke-width:2px,color:#130C49
+    style text fill:#ffffff,stroke:#61BD73,stroke-width:2px,color:#130C49
+    style storage fill:#ffffff,stroke:#7AD6EB,stroke-width:2px,color:#130C4

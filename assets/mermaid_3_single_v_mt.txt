@@ -1,0 +1,63 @@
+flowchart TB
+    subgraph MultiDB ["Multi-Tenant"]
+        direction LR
+        MTCollection["🗄️ Collection"]
+
+        ShardA["Tenant A Shard"]
+        IndexA["Indexes"]
+        StoreA["Object Store"]
+
+        ShardB["Tenant B Shard"]
+        IndexB["Indexes"]
+        StoreB["Object Store"]
+
+        ShardC["Tenant C Shard"]
+        IndexC["Indexes"]
+        StoreC["Object Store"]
+
+        MTCollection --> ShardA
+        MTCollection --> ShardB
+        MTCollection --> ShardC
+
+        ShardA --> IndexA
+        ShardA --> StoreA
+
+        ShardB --> IndexB
+        ShardB --> StoreB
+
+        ShardC --> IndexC
+        ShardC --> StoreC
+    end
+
+    subgraph SingleDB ["Single Collection"]
+        direction LR
+        SingleCollection["🗄️ Collection"]
+        SingleIndexes["Indexes"]
+        SingleStore["Object Store"]
+
+        SingleCollection --> SingleIndexes
+        SingleCollection --> SingleStore
+    end
+
+    %% Style nodes - Single tenant
+    style SingleCollection fill:#ffffff,stroke:#130C49,color:#130C49,stroke-width:2px
+    style SingleIndexes fill:#FFF3E0,stroke:#FFB74D,color:#130C49
+    style SingleStore fill:#E3F2FD,stroke:#64B5F6,color:#130C49
+
+    %% Style nodes - Multi tenant
+    style MTCollection fill:#ffffff,stroke:#130C49,color:#130C49,stroke-width:2px
+    style ShardA fill:#ffffff,stroke:#130C49,color:#130C49,stroke-width:2px
+    style ShardB fill:#ffffff,stroke:#130C49,color:#130C49,stroke-width:2px
+    style ShardC fill:#ffffff,stroke:#130C49,color:#130C49,stroke-width:2px
+
+    %% Style tenant resources
+    style IndexA fill:#FFF3E0,stroke:#FFB74D,color:#130C49
+    style IndexB fill:#FFF3E0,stroke:#FFB74D,color:#130C49
+    style IndexC fill:#FFF3E0,stroke:#FFB74D,color:#130C49
+    style StoreA fill:#E3F2FD,stroke:#64B5F6,color:#130C49
+    style StoreB fill:#E3F2FD,stroke:#64B5F6,color:#130C49
+    style StoreC fill:#E3F2FD,stroke:#64B5F6,color:#130C49
+
+    %% Style subgraphs
+    style SingleDB fill:transparent,stroke:#7AD6EB,stroke-width:2px,color:#130C49
+    style MultiDB fill:transparent,stroke:#7AD6EB,stroke-width:2px,color:#130C49
