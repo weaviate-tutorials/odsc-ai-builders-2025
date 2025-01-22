@@ -1,5 +1,8 @@
 # Database Design Patterns
 
+> [!NOTE]
+> The repository was a part of the ODSC AI Builders' Summit 2025 workshop - "Database Design Patterns: Single Collection vs Multi-Tenancy". If you have any questions, please feel free to reach out to the author, or open an issue on this repository.
+
 # Step 1: Preparation & Setup
 
 Clone this repo and navigate into it. This will be your working directory for the workshop.
