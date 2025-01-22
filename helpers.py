@@ -22,8 +22,8 @@ def connect_to_weaviate() -> WeaviateClient:
     client = weaviate.connect_to_local(
         port=8080,  # For Kubernetes, use 80
         headers={
-            "X-OPENAI-API-KEY": os.environ["OPENAI_API_KEY"],
-            "X-COHERE-API-KEY": os.environ["COHERE_API_KEY"],
+            # "X-OPENAI-API-KEY": os.environ["OPENAI_API_KEY"],
+            # "X-COHERE-API-KEY": os.environ["COHERE_API_KEY"],
         },
     )
     return client
