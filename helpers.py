@@ -119,7 +119,6 @@ def get_pprof_results() -> str:
 STREAMLIT_STYLING = """
 <style>
     .stHeader {
-        background-color: #f0f2f6;
         padding: 1.5rem;
         border-radius: 10px;
         margin-bottom: 2rem;
