@@ -115,7 +115,14 @@ go tool pprof -top http://localhost:6060/debug/pprof/heap
 
 # Step 3: Work with Weaviate
 
-## 3.1 Run the demo Streamlit app
+## 3.1 Work through the notebooks
+
+See: `1_single_collection.ipynb` and `2_multi_tenancy.ipynb` notebooks and work through them during the workshop.
+
+> [!TIP]
+> Hint: The `finished_notebooks` branch contains pre-populated versions of the notebooks!
+
+## 3.2 Run the demo Streamlit app
 
 We have a Streamlit app that will help you to visualise basic cluster statistics, and to make use of the data. (Remember to navigate to the project directory and activate the virtual environment.) Run it with:
 
