@@ -86,9 +86,6 @@ with connect_to_weaviate() as client:
 
         # ===== RAG =====
 
-        # Using claudette (https://claudette.answer.ai/)
-        # API key will be read from the environment variable ANTHROPIC_API_KEY
-
         if len(search_response.objects) > 0:
             st.markdown("**RAG**")
 

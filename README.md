@@ -54,11 +54,7 @@ The workshop is set up for two different embeddings & LLM providers options ([Co
 >     - We will use pre-embedded data for this workshop, so the expense will be for queries only & minimal
 >     - Still, please set a budget limit in your account for extra safety
 
-No additional setup is required for using Cohere.
-
-You can use your own Cohere API key in the notebook.
-
-However, if you don't have one - you can use a shared key, as shown in the notebooks.
+You can use your own Cohere API key in the notebook. You can use a free "trial" key, which should be sufficient for this workshop.
 
 ### 1.2.2 Option 2: Ollama
 
